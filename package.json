@@ -1,0 +1,26 @@
+{
+    "name": "cspsupport",
+    "displayName": "CSPSupport",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "LongPham",
+    "engines": {
+        "vscode": "^1.15.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "csp",
+            "aliases": ["CSP", "csp", "Communicating Sequential Processes"],
+            "extensions": [".csp"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "csp",
+            "scopeName": "source.csp",
+            "path": "./syntaxes/csp.tmLanguage.json"
+        }]
+    }
+}

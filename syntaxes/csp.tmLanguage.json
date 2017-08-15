@@ -1,0 +1,75 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "CSP",
+	"fileTypes": [".cspsample"],
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#storages"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-dash.csp",
+					"begin": "--",
+					"end": "\n"
+				},
+				{	"name": "comment.block.documentation.csp",
+					"begin": "{-",
+					"end": "-}"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.csp",
+					"match": "\\b([0-9]+)\\b"
+				},
+				{
+					"name": "constant.language.boolean.csp",
+					"match": "(true|false)"				
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.csp",
+				"match": "\\b(if|while|for|return)\\b"
+			}]
+		},
+		"storages": {
+			"patterns": [
+				{
+				"name": "storage.type.csp",
+				"match": "assert"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.csp",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.csp",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.csp"
+}
