@@ -1,7 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "CSP",
-	"fileTypes": [".cspsample"],
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -14,6 +13,9 @@
 		},
 		{
 			"include": "#constants"
+		},
+		{
+			"include": "#supports"
 		},
 		{
 			"include": "#storages"
@@ -41,21 +43,55 @@
 				},
 				{
 					"name": "constant.language.boolean.csp",
-					"match": "(true|false)"				
+					"match": "true|false|True|False"				
+				},
+				{
+					"name": "constant.language.process.csp",
+					"match": "STOP|DIV|SKIP"
 				}
 			]
 		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.csp",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.csp",
+					"match": "\\b(if|then|else)\\b"
+				},
+				{
+					"name": "keyword.operator.process.csp",
+					"match": "->|\\[\\]|\\|~\\||\\|\\|\\||\\[\\||\\|]|\\[\\[|\\]\\]|\\|\\||;|/\\\\|\\[>|\\\\|\\|\\\\"
+				},
+				{
+					"name": "keyword.operator.channelIO.csp",
+					"match": "\\.|\\!|\\?"
+				},
+				{
+					"name": "keyword.operator.miscellaneous.csp",
+					"match": "{\\||\\|}|\\.\\.|:|#|<-|<->|==|\\!=|<|>|<=|>=|@|&"
+				},
+				{
+					"name": "keyword.other.refinement.csp",
+					"match": "\\[(FD|F|T)="
+				},
+				{
+					"name": "keyword.other.assertion.csp",
+					"match": ":\\[(deadlock free|deadlock-free|deterministic|divergence free|divergence-free|livelock free|livelock-free)( \\[F\\]| \\[FD\\])?\\]"
+				}
+			]
+		},
+		"supports": {
+			"patterns": [
+				{
+					"name": "support.function.prelude.csp",
+					"match": "\\b(length|length|null|head|tail|concat|union|inter|diff|Union|Inter|set|Set|Seq|empty|card|member|seq|elem|Int|Bool|Proc|Events|Char)\\b"
+				}
+			]
 		},
 		"storages": {
 			"patterns": [
 				{
 				"name": "storage.type.csp",
-				"match": "assert"
+				"match": "\\b(assert|datatype|channel)\\b"
 				}
 			]
 		},
