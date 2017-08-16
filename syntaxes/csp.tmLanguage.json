@@ -70,6 +70,10 @@
 					"match": "{\\||\\|}|\\.\\.|:|#|<-|<->|==|\\!=|<|>|<=|>=|@|&"
 				},
 				{
+					"name": "keyword.operator.arithmetic.csp",
+					"match": "(\\-|\\+|\\*|\\/|%)"
+				},
+				{
 					"name": "keyword.other.refinement.csp",
 					"match": "\\[(FD|F|T)="
 				},
@@ -90,8 +94,12 @@
 		"storages": {
 			"patterns": [
 				{
-				"name": "storage.type.csp",
-				"match": "\\b(assert|datatype|channel)\\b"
+					"name": "storage.modifier.csp",
+					"match": "\\b(assert|datatype|channel)\\b"
+				},
+				{
+					"name": "storage.type.csp",
+					"match": "Int|Bool|Proc|Events|Char"
 				}
 			]
 		},
