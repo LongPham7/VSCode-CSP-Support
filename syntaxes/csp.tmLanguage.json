@@ -87,7 +87,7 @@
 				},
 				{
 					"name": "keyword.operator.arithmetic.csp",
-					"match": "(\\+|\\*|\\/|%)"
+					"match": "(\\+|\\*|\\/|%|(?<!\\-)\\-(?!\\-))"
 				},
 				{
 					"name": "keyword.operator.comparison.csp",
