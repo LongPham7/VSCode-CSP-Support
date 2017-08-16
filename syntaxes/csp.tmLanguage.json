@@ -1,6 +1,9 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"information_for_contributors": [
+		"This grammar is based on the one from https://github.com/cspm/atom-language-cspm."
+	],
 	"name": "CSP",
+	"fileTypes": ["csp"],
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -19,6 +22,9 @@
 		},
 		{
 			"include": "#storages"
+		},
+		{
+			"include": "#punctuations"
 		}
 	],
 	"repository": {
@@ -43,7 +49,7 @@
 				},
 				{
 					"name": "constant.language.boolean.csp",
-					"match": "true|false|True|False"				
+					"match": "\\btrue|false|True|False\\b"		
 				},
 				{
 					"name": "constant.language.process.csp",
@@ -63,7 +69,7 @@
 				},
 				{
 					"name": "keyword.operator.channelIO.csp",
-					"match": "\\.|\\!|\\?"
+					"match": "\\.|\\!|\\?|\\$"
 				},
 				{
 					"name": "keyword.operator.miscellaneous.csp",
@@ -79,7 +85,7 @@
 				},
 				{
 					"name": "keyword.other.assertion.csp",
-					"match": ":\\[(deadlock free|deadlock-free|deterministic|divergence free|divergence-free|livelock free|livelock-free)( \\[F\\]| \\[FD\\])?\\]"
+					"match": ":\\[(deadlock free|deadlock-free|deterministic|divergence free|divergence-free|livelock free|livelock-free|has trace)( \\[F\\]| \\[FD\\])?\\]"
 				}
 			]
 		},
@@ -87,7 +93,7 @@
 			"patterns": [
 				{
 					"name": "support.function.prelude.csp",
-					"match": "\\b(length|length|null|head|tail|concat|union|inter|diff|Union|Inter|set|Set|Seq|empty|card|member|seq|elem|Int|Bool|Proc|Events|Char)\\b"
+					"match": "\\b(length|length|null|head|tail|concat|union|inter|diff|Union|Inter|set|Set|Seq|empty|card|member|seq|elem|CHAOS|RUN|TSTOP|TSKIP|WAIT|extensions|productions|deter|failure_watchdog|loop|prioritise|prioritise_nocache|prioritisepo|trace_watchdog|timed_priority|explicate|lazyenumerate|diamond|normal|lazynorm|sbisim|tau_loop_factor|model_compress|wbisim|dbisim|mtransclose|relational_image|relational_inverse_image|transpose|chase|chase_nocache|error|show|emptyMap|mapFromList|mapLookup|mapMember|mapToList|mapUpdate|mapUpdateMultiple|mapDelete|Map)\\b"
 				}
 			]
 		},
@@ -95,11 +101,19 @@
 			"patterns": [
 				{
 					"name": "storage.modifier.csp",
-					"match": "\\b(assert|datatype|channel)\\b"
+					"match": "\\b(assert|datatype|subtype|let|within|nametype|channel|external|transparent)\\b"
 				},
 				{
 					"name": "storage.type.csp",
-					"match": "Int|Bool|Proc|Events|Char"
+					"match": "\\b(Int|Bool|Proc|Events|Char)\\b"
+				}
+			]
+		},
+		"punctuations": {
+			"pattern": [
+				{
+					"name": "punctuation.separator.comma.cspm",
+					"match": ","
 				}
 			]
 		},
