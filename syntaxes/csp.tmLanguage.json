@@ -35,7 +35,7 @@
 					"begin": "--",
 					"end": "\n"
 				},
-				{	"name": "comment.block.documentation.csp",
+				{	"name": "comment.block.csp",
 					"begin": "{-",
 					"end": "-}"
 				}
@@ -44,12 +44,12 @@
 		"constants": {
 			"patterns": [
 				{
-					"name": "constant.numeric.csp",
+					"name": "constant.numeric.integer.csp",
 					"match": "\\b([0-9]+)\\b"
 				},
 				{
 					"name": "constant.language.boolean.csp",
-					"match": "\\btrue|false|True|False\\b"		
+					"match": "\\b(true|false|True|False)\\b"		
 				},
 				{
 					"name": "constant.language.process.csp",
@@ -72,12 +72,20 @@
 					"match": "\\.|\\!|\\?|\\$"
 				},
 				{
-					"name": "keyword.operator.miscellaneous.csp",
-					"match": "{\\||\\|}|\\.\\.|:|#|<-|<->|==|\\!=|<|>|<=|>=|@|&"
-				},
-				{
 					"name": "keyword.operator.arithmetic.csp",
 					"match": "(\\-|\\+|\\*|\\/|%)"
+				},
+				{
+					"name": "keyword.operator.comparison.csp",
+					"match": "==|\\!=|<|>|<=|>="
+				},
+				{
+					"name": "keyword.operator.logical.csp",
+					"match": "\\b(and|or|not)\\b"
+				},
+				{
+					"name": "keyword.operator.miscellaneous.csp",
+					"match": "{\\||\\|}|\\.\\.|:|#|<-|<->|@|&"
 				},
 				{
 					"name": "keyword.other.refinement.csp",
@@ -100,11 +108,11 @@
 		"storages": {
 			"patterns": [
 				{
-					"name": "storage.modifier.csp",
+					"name": "storage.type.statement.csp",
 					"match": "\\b(assert|datatype|subtype|let|within|nametype|channel|external|transparent)\\b"
 				},
 				{
-					"name": "storage.type.csp",
+					"name": "storage.type.element.csp",
 					"match": "\\b(Int|Bool|Proc|Events|Char)\\b"
 				}
 			]
