@@ -28,17 +28,31 @@
 		}
 	],
 	"repository": {
-		"comments": {
+		"block_comment": {
+			"begin": "\\{-",
+			"captures": {
+		  		"0": {
+					"name": "punctuation.definition.comment.cspm"
+				  }
+			},
+			"end": "-\\}",
+			"name": "comment.block.cspm"
+		},
+	  	"comments": {
 			"patterns": [
-				{
-					"name": "comment.line.double-dash.csp",
+		  		{
 					"begin": "--",
-					"end": "\n"
+					"beginCaptures": {
+			  			"0": {
+							"name": "punctuation.definition.comment.cspm"
+						}
+					},
+					"end": "\n",
+					"name": "comment.line.double-dash.cspm"
 				},
-				{	"name": "comment.block.csp",
-					"begin": "{-",
-					"end": "-}"
-				}
+				{
+					"include": "#block_comment"
+		  		}
 			]
 		},
 		"constants": {
@@ -53,7 +67,7 @@
 				},
 				{
 					"name": "constant.language.process.csp",
-					"match": "STOP|DIV|SKIP"
+					"match": "\\b(STOP|DIV|SKIP)\\b"
 				}
 			]
 		},
@@ -73,7 +87,7 @@
 				},
 				{
 					"name": "keyword.operator.arithmetic.csp",
-					"match": "(\\-|\\+|\\*|\\/|%)"
+					"match": "(\\+|\\*|\\/|%)"
 				},
 				{
 					"name": "keyword.operator.comparison.csp",
