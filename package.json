@@ -1,12 +1,20 @@
 {
     "name": "cspsupport",
     "displayName": "CSP Language Support",
-    "description": "",
-    "version": "0.0.2",
+    "description": "Supports syntax highlighting for machine-readable CSP",
+    "version": "0.0.3",
     "publisher": "LongPham",
     "engines": {
         "vscode": "^1.15.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LongPham7/VSCode-CSP-Support"
+    },
+    "keywords": [
+        "CSP", 
+        "syntax highlight"
+    ],
     "categories": [
         "Languages"
     ],
