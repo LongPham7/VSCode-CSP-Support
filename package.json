@@ -2,7 +2,7 @@
     "name": "cspsupport",
     "displayName": "CSP Language Support",
     "description": "Supports syntax highlighting for machine-readable CSP",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "publisher": "LongPham",
     "engines": {
         "vscode": "^1.15.0"
